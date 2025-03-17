@@ -26,7 +26,7 @@
 .maintext {
     font-size: 48px;
     color: #f9faf8;
-    wight: 900;
+    width: 80%
 }
 
 .subtext,
@@ -38,16 +38,24 @@
 .hero {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     background-color: #1f2937;
     padding: 20px 50px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 150px;
+    font-size: 36px;
 }
 
 .img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid #3882f6;
-    width: 350px;
+    width: 600px;
     height: 150px;
     background-color: #797a7a;
     color: #f9faf8;
@@ -57,7 +65,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px 150px;
     background-color: #e5e7eb;
+    font-size: 36px;
 }
 
 .footer {
@@ -92,10 +102,6 @@ button {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 50px 0;
-}
-
-.img {
-    border: 1px solid #3882f6;
 }
 
 .sm-img {
