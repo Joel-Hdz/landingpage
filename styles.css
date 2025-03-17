@@ -39,15 +39,18 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #1f2937;
-    padding: 50px 0;
+    padding: 20px 50px;
 }
 
 .img {
     display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid #3882f6;
-    border-radius: 10px;
-    width: 300px;
+    width: 350px;
     height: 150px;
+    background-color: #797a7a;
+    color: #f9faf8;
 }
 
 .quote {
