@@ -63,7 +63,7 @@
 
 .quote-section {
     background-color: #e5e7eb;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -161,5 +161,5 @@ button {
 
 .bottom-button {
     border: 1px solid;
-    border-color: #e5e7eb;
+    border-color: white;
 }
