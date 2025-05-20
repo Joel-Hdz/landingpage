@@ -14,9 +14,11 @@
         <h1 class="logo">header logo</h1>
         <div>
             <div class="nav">
-                <a class="link" href="#link1">Link 1</a>
-                <a class="link" href="#link2">Link 2</a>
-                <a class="link" href="#link3">Link 3</a>
+                <a class="link" href="#link1">Home</a>
+                <a class="link" href="#link2">About</a>
+                <a class="link" href="#link3">Upcoming</a>
+                <a class="link" href="#link2">Projects</a>
+                <a class="link" href="#link3">Contact</a>
             </div>
         </div>
     </div>
@@ -33,30 +35,35 @@
     </div>
     <div class="info">
         <span class="random-info">Some random information.</span>
-        <div class="grid">
-            <div class="card">
-                <img class="sm-img">
-                <p>this is some subtext under an illustration or image</p>
-            </div>
-            <div class="card">
-                <img class="sm-img">
-                <p>this is some subtext under an illustration or image</p>
-            </div>
-            <div class="card">
-                <img class="sm-img">
-                <p>this is some subtext under an illustration or image</p>
-            </div>
-            <div class="card">
-                <img class="sm-img">
-                <p>this is some subtext under an illustration or image</p>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="grid">
+                    <div class="card">
+                        <img class="sm-img">
+                        <p>this is some subtext under an illustration or image</p>
+                    </div>
+                    <div class="card">
+                        <img class="sm-img">
+                        <p>this is some subtext under an illustration or image</p>
+                    </div>
+                    <div class="card">
+                        <img class="sm-img">
+                        <p>this is some subtext under an illustration or image</p>
+                    </div>
+                    <div class="card">
+                        <img class="sm-img">
+                        <p>this is some subtext under an illustration or image</p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
     <div class="quote-section">
         <div class="quote">
             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-        <div class="author">- Thor, God of Thunder</div>
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+            <div class="author">- Thor, God of Thunder</div>
         </div>
     </div>
     <div class="call">
@@ -69,6 +76,77 @@
     <div class="footer">
         <h4>Copyright The Odin Project 2025</h4>
     </div>
+
+    <script>
+
+
+        document.addEventListener('wheel', function (e) {
+            // Only trigger on first scroll down, and only if near the top
+            if (window.scrollY < 100 && e.deltaY > 0) {
+                e.preventDefault();
+                document.querySelector('.info').scrollIntoView({ behavior: 'smooth' });
+            }
+        }, { passive: false });
+    </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const grid = document.querySelector('.grid');
+        const cards = Array.from(document.querySelectorAll('.card'));
+        const cardCount = cards.length;
+        const cardGap = 40; // px, must match your CSS
+        const cardWidth = cards[0].offsetWidth + cardGap;
+        const visibleCards = Math.floor(document.querySelector('.carousel-track').offsetWidth / cardWidth);
+
+        // Clone last N cards to the start and first N cards to the end for seamless looping
+        // Update references after cloning
+        const allCards = grid.querySelectorAll('.card');
+        let currentIndex = visibleCards; // Start at the first real card
+        let intervalId = null;
+
+        // Calculate initial offset to center the first card
+
+
+        function updateCarouselTransform(animate = true) {
+            grid.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+            grid.style.transform = `translateX(-10px`;
+        }
+
+        function moveCarousel() {
+            currentIndex++;
+            updateCarouselTransform(true);
+
+            // If we've moved past the last real card, reset to the first real card (no animation)
+            if (currentIndex === cardCount + visibleCards) {
+                setTimeout(() => {
+                    currentIndex = visibleCards;
+                    updateCarouselTransform(false);
+                }, 500);
+            }
+        }
+
+        function startCarousel() {
+            if (intervalId) return;
+            intervalId = setInterval(moveCarousel, 1500);
+        }
+
+        function stopCarousel() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        carousel.addEventListener('mouseenter', startCarousel);
+        carousel.addEventListener('mouseleave', stopCarousel);
+
+        // Responsive adjustment
+        window.addEventListener('resize', () => {
+            stopCarousel();
+            updateCarouselTransform(false);
+        });
+
+        updateCarouselTransform(false);
+    </script>
+
 </body>
 
 </html>
