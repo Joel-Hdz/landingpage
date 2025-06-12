@@ -10,29 +10,34 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1 class="logo">header logo</h1>
-        <div>
-            <div class="nav">
-                <a class="link" href="#link1">Home</a>
-                <a class="link" href="#link2">About</a>
-                <a class="link" href="#link3">Upcoming</a>
-                <a class="link" href="#link2">Projects</a>
-                <a class="link" href="#link3">Contact</a>
+    <div class="top-section">
+        <div class="header">
+            <h1 class="logo">Hernandez Signal Solutions</h1>
+            <div>
+                <div class="nav">
+                    <a class="link" href="#link1">Home</a>
+                    <a class="link" href="#link2">About</a>
+                    <a class="link" href="#link2">Projects</a>
+                    <a class="link" href="#link3">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="hero">
-        <div class="hero-text">
-            <h1 class="maintext">This website is awesome</h1>
-            <p class="subtext">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et
-                dolore
-            </p>
-            <button>Sign up</button>
+        <div class="hero">
+            <div class="hero-text">
+                <h1 class="maintext">Signal Solutions in DFW</h1>
+                <p class="subtext">
+                    Hernandez Signal Solutions is a leading provider of traffic signal solutions in the Dallas-Fort
+                    Worth
+                    area. We specialize in designing, installing, and maintaining traffic signal systems that enhance
+                    road
+                    safety and improve traffic flow.
+                </p>
+                <button>Request info</button>
+            </div>
+            <div class="img"><img src="images/logo.png" alt="Company logo"></div>
         </div>
-        <div class="img"><img>this is a placeholder for an image</div>
     </div>
+
     <div class="info">
         <span class="random-info">Some random information.</span>
         <div class="carousel">
@@ -91,7 +96,7 @@
 
     <script>
         const carousel = document.querySelector('.carousel');
-        const grid = document.querySelector('.grid');
+        const grid = document.querySelector('0.grid');
         const cards = Array.from(document.querySelectorAll('.card'));
         const cardCount = cards.length;
         const cardGap = 40; // px, must match your CSS

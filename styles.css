@@ -37,10 +37,19 @@
 
 .hero {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #1f2937;
+    flex-direction: row;
+    align-items: center;    
+    justify-content: center;
+    width: 100%;
     padding: 50px 50px 100px;
+    background-color: #1f2937;
+}
+
+.top-section {
+    background-image: url('images/techBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-text {
@@ -49,6 +58,7 @@
     align-items: flex-start;
     padding: 50px 150px;
     font-size: 36px;
+    
 }
 
 .hero-text h1 {
